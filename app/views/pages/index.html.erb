@@ -1,0 +1,23 @@
+<div class="container">
+<h1 style="text-align: center; color: blue; font-weight: bold;">All data from the data.json</h1>
+<table class="table">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Designed by</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @languages.each do |l| %>
+    <tr>
+      <th scope="row"><%= l.id%></th>
+      <td><%= l.name%></td>
+      <td><%= l.typical%></td>
+      <td><%= l.designed%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>

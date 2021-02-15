@@ -1,0 +1,30 @@
+
+<div class="container">
+	<h3 style="text-align: center; color: blue; font-weight: bold;">Results by parameter <%= params[:search] %> </h3>  <hr/>
+	
+	<% if @results.blank? %>
+		<h3 style="text-align: center; color: red">"Not a valid combination :("</h1>
+	<%else%>
+		<table class="table">
+		  <thead class="table-primary">
+		    <tr>
+		      <th scope="col">Name</th>
+		      <th scope="col">Type</th>
+		      <th scope="col">Designed by</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  <% @results.each do |result| %> 
+		    <tr>
+		      <td><%= result.name%></td>
+		      <td><%= result.typical%></td>
+		      <td><%= result.designed%></td>
+		    </tr>
+		    <%end%>
+		  </tbody>
+		</table>
+	<%end%>
+	<%= link_to root_path do %><h5>All database</h5><%end%>
+
+
+</div>
